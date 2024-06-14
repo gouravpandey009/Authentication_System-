@@ -1,59 +1,79 @@
-# Node.js Express Login and Registration example with JWT
+# Node.js Express Login and Registration with JWT Authentication 🚀
 
-- Appropriate Flow for User Login and Registration with JWT Authentication
-- Node.js Express Architecture with CORS, Authentication & Authorization middlewares & Sequelize
-- How to configure Express routes to work with JWT
-- How to define Data Models and association for Authentication and Authorization
-- Way to use Sequelize to interact with MySQL Database
+## Overview
+This project demonstrates a complete user authentication system using Node.js, Express, JWT (JSON Web Tokens), Sequelize (ORM), and MySQL database. It includes user registration, login, and authorization processes.
 
-## User Registration, User Login and Authorization process.
-The diagram shows flow of how we implement User Registration, User Login and Authorization process.
+## Features
+- User Registration & Login
+- JWT Authentication & Authorization
+- Express Middleware for CORS, Authentication & Authorization
+- Sequelize ORM for MySQL Database
+- Secure Password Hashing
+- Error Handling Middleware
+- Integration with Front-end Frameworks (Angular, React)
 
-![node-js-express-login-example-flow](node-js-express-login-example-flow.png)
+## Project Structure
+The project is structured with separation of concerns for better maintainability and scalability:
 
-For more detail, please visit:
-> [Node.js Express Login and Registration example with JWT](https://www.bezkoder.com/node-js-express-login-example/)
-
-Front-end that works with this Node back-end:
-- [Angular 12](https://www.bezkoder.com/angular-12-jwt-auth-httponly-cookie/) / [Angular 13](https://www.bezkoder.com/angular-13-jwt-auth-httponly-cookie/) / [Angular 14](https://www.bezkoder.com/angular-14-jwt-auth/) / [Angular 15](https://www.bezkoder.com/angular-15-jwt-auth/) / [Angular 16](https://www.bezkoder.com/angular-16-jwt-auth/) / [Angular 17](https://www.bezkoder.com/angular-17-jwt-auth/)
-- [React](https://www.bezkoder.com/react-login-example-jwt-hooks/) / [React Redux](https://www.bezkoder.com/redux-toolkit-auth/)
-
-## More Practice:
-> [Build Node.js Rest APIs with Express, Sequelize & MySQL](https://www.bezkoder.com/node-js-express-sequelize-mysql/)
-
-> [Server side Pagination in Node.js with Sequelize and MySQL](https://www.bezkoder.com/node-js-sequelize-pagination-mysql/)
-
-> [Node.js Express File Upload Rest API example](https://www.bezkoder.com/node-js-express-file-upload/)
-
-> [Node.js Express File Upload with Google Cloud Storage example](https://www.bezkoder.com/google-cloud-storage-nodejs-upload-file/)
-
-> [Node.js JWT Authentication & Authorization example (using HTTP Headers)](https://www.bezkoder.com/node-js-jwt-authentication-mysql/)
-
-> [Node.js JWT Authentication & Authorization example with MongoDB](https://www.bezkoder.com/node-js-mongodb-auth-jwt/)
-
-Associations:
-> [Sequelize Associations: One-to-Many Relationship example](https://www.bezkoder.com/sequelize-associate-one-to-many/)
-
-> [Sequelize Associations: Many-to-Many Relationship example](https://www.bezkoder.com/sequelize-associate-many-to-many/)
-
-Deployment:
-> [Deploying/Hosting Node.js app on Heroku with MySQL database](https://www.bezkoder.com/deploy-node-js-app-heroku-cleardb-mysql/)
-
-> [Docker Compose: Node.js Express and MySQL example](https://www.bezkoder.com/docker-compose-nodejs-mysql/)
-
-Integration on same Server/Port:
-> [Integrate Angular with Node.js Express](https://www.bezkoder.com/integrate-angular-12-node-js/)
-
-> [Integrate Vue with Node.js Express](https://www.bezkoder.com/serve-vue-app-express/)
-
-> [Integrate React with Node.js Express](https://www.bezkoder.com/integrate-react-express-same-server-port/)
-
-## Project setup
 ```
+project-root/
+│
+├── config/
+│   ├── db.config.js      # Database configuration
+│   ├── auth.config.js    # JWT secret key configuration
+│   └── ...
+│
+├── controllers/
+│   ├── auth.controller.js   # Controller for authentication routes
+│   ├── user.controller.js   # Controller for user actions
+│   └── ...
+│
+├── middleware/
+│   ├── authJwt.js         # JWT authentication middleware
+│   ├── verifySignUp.js    # Verify unique username/email middleware
+│   └── ...
+│
+├── models/
+│   ├── index.js          # Sequelize initialization and associations
+│   ├── user.model.js     # User model definition
+│   └── ...
+│
+├── routes/
+│   ├── auth.routes.js    # Routes for authentication (login, register)
+│   ├── user.routes.js    # Routes for user actions (profile, etc.)
+│   └── ...
+│
+├── services/
+│   ├── auth.service.js   # Authentication service
+│   ├── user.service.js   # User service (queries to User model)
+│   └── ...
+│
+├── utils/
+│   ├── bcrypt.js         # Password hashing utility
+│   └── ...
+│
+├── node_modules/
+├── server.js             # Main server file
+├── package.json
+└── ...
+
+```
+
+## Getting Started
+### Installation
+Clone the repository and install dependencies:
+
+```bash
 npm install
 ```
 
+### Configuration
+- Configure your MySQL database in `config/db.config.js`.
+- Set JWT secret key in `config/auth.config.js`.
+
 ### Run
-```
+Start the server:
+
+```bash
 node server.js
 ```
