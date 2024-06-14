@@ -19,41 +19,41 @@ The project is structured with separation of concerns for better maintainability
 project-root/
 │
 ├── config/
-│   ├── db.config.js      # Database configuration
-│   ├── auth.config.js    # JWT secret key configuration
+│   ├── db.config.js    
+│   ├── auth.config.js   
 │   └── ...
 │
 ├── controllers/
-│   ├── auth.controller.js   # Controller for authentication routes
-│   ├── user.controller.js   # Controller for user actions
+│   ├── auth.controller.js  
+│   ├── user.controller.js  
 │   └── ...
 │
 ├── middleware/
-│   ├── authJwt.js         # JWT authentication middleware
-│   ├── verifySignUp.js    # Verify unique username/email middleware
+│   ├── authJwt.js        
+│   ├── verifySignUp.js    
 │   └── ...
 │
 ├── models/
-│   ├── index.js          # Sequelize initialization and associations
-│   ├── user.model.js     # User model definition
+│   ├── index.js          
+│   ├── user.model.js    
 │   └── ...
 │
 ├── routes/
-│   ├── auth.routes.js    # Routes for authentication (login, register)
-│   ├── user.routes.js    # Routes for user actions (profile, etc.)
+│   ├── auth.routes.js   
+│   ├── user.routes.js   
 │   └── ...
 │
 ├── services/
-│   ├── auth.service.js   # Authentication service
-│   ├── user.service.js   # User service (queries to User model)
+│   ├── auth.service.js  
+│   ├── user.service.js   
 │   └── ...
 │
 ├── utils/
-│   ├── bcrypt.js         # Password hashing utility
+│   ├── bcrypt.js    
 │   └── ...
 │
 ├── node_modules/
-├── server.js             # Main server file
+├── server.js       
 ├── package.json
 └── ...
 
